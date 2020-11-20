@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks: 
+  - name: Creating ec2 instance
+    ec2:
+      instance_type: t2.micro
+      count: 1
+      image: ami-07c8bc5c1ce9598c3
+      key_name: bharathi
+      region: us-east-2
+      assign_public_ip: true
+      group_id: sg-019056e4d15c5059d
+      vpc_subnet_id: subnet-be19d5d5
+      aws_access_key: AKIAJBLDIOKNKWO5MPCA
+      aws_secret_key: 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
+      
+       
+    
+
+# Here in this i am using default vpc and default (new) security group for launching the new ec2 instance      -
